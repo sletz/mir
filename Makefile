@@ -261,6 +261,10 @@ c2mir-bin-gen-test: c2m mir.o mir-gen.o b2ctab
 mir2c-test:
 	$(CC) -g -DTEST_MIR2C -I. mir.c mir2c/mir2c.c && ./a.out
 
+mir2c-run:
+	$(CC) -g -DMIR2C -I. mir.c mir2c/mir2c.c -o mir2c-run
+
+
 mir2c-bench:
 	$(CC) $(CFLAGS) -DTEST_MIR2C -I. mir2c/mir2c.c mir.c && ./a.out -v && size ./a.out
 
