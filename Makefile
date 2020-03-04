@@ -72,7 +72,10 @@ l2m: llvm2mir.o $(MIR_DEPS) llvm2mir/llvm2mir.h llvm2mir/llvm2mir-driver.c mir-g
 
 m2b: mir.o mir-utils/m2b.c
 	$(CC) -I. $(CFLAGS) -o $@ mir.o mir-utils/m2b.c
-	
+
+faust: mir.o mir-utils/faust.c
+	$(CC) -I. $(CFLAGS) -o $@ mir.o mir-gen.o mir-utils/faust.c
+
 b2m: mir.o mir-utils/b2m.c
 	$(CC) -I. $(CFLAGS) -o $@ mir.o mir-utils/b2m.c
 	
